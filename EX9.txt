@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ConsoleApplication1
+{
+    public class arrsum
+    {
+        public int sum(int[] num1)
+        {
+            int res = 0;
+            for (int a = 0; a < num1.Length; a++)
+            {
+                res += num1[a];
+            }
+            return res;
+        }
+ internal int Sum(int[] Numbers)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    class Program
+    {
+        static void main(string[] args)
+        {
+            int[] num1 = { 5, 4, 2, 1, 6 };
+            int res;
+            Console.Write("\n array sum example");
+            arrsum cal = new arrsum();
+            res = cal.sum(num1);
+            Console.Write("\nsum={0}", res);
+            Console.ReadLine();
+        }
+    }
+}
+
+
+
+
+
+TESTING MEHTHODS
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+namespace ConsoleApplication1
+{
+    [TestFixture]
+    public class Class1
+    {
+        [Test]
+        public void test1()
+        {
+            int[] Numbers = { 5, 4, 2, 1, 1 };
+            int actual;
+            arrsum target = new arrsum();
+            actual = target.sum(Numbers);
+            Assert.AreEqual(13, actual);
+        }
+        [Test]
+        public void test2()
+        {
+            int[] Numbers = { 5, 4, 2, 1, 1 };
+            int actual;
+            arrsum target = new arrsum();
+            actual = target.sum(Numbers);
+            Assert.AreEqual(15, actual);
+        }
+    }
+}

@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace stringoperation
+{
+    public class Class1
+    {
+        public String Concat(String str1, String str2)
+        {
+            return "Hello " + str1 + " " + str2;
+        }
+    }
+}
+
+
+
+
+TESTING METHODS
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+namespace stringoperation
+{
+    [TestFixture]
+    class Class2
+    {
+        [Test]
+        public void TestString()
+        {
+            String actual, expected = "Hello a b";
+            Class1 target = new Class1();
+            actual = target.Concat("a", "b");
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void TestString1()
+        {
+            String actual, expected = "Hello a b";
+            Class1 target = new Class1();
+            actual = target.Concat("b", "a");
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}
+

@@ -1,0 +1,77 @@
+using Microsoft.VisualBasic;
+using NUnit.Framework.Internal;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace stringequal
+{
+    public class UsrNUnitSourceCode
+    {
+        // String property.
+        public string StringToTest
+        {
+            get
+            {
+                return "String to test";
+            }
+        }
+        // The method that verifies the equality of the two strings.
+ public bool AreStringsEqual(String str1, String str2)
+        {
+            return str1 == str2;
+        }
+    }
+}
+
+
+
+
+TESTING METHODS
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.VisualBasic;
+using NUnit.Framework;
+using NUnit.Framework.Internal;
+
+namespace stringequal
+{
+    [TestFixture]
+    class UsrNUnitSourceCodeTests
+    {
+        // The tested class instance.
+        UsrNUnitSourceCode objToTest = new
+       UsrNUnitSourceCode();
+        // Testing string.
+        String str = "String to test";
+        [Test]
+        public void ClassReturnsCorrectStringProperty()
+        {
+            // Testing the string property value.
+            // The value must be populated and match the required value.
+ String res = objToTest.StringToTest;
+            Assert.That(res, Is.Not.Null.And.EqualTo(str));
+        }
+        [Test]
+        public void StringsMustBeEqual()
+        {
+            // Testing the value equality of the two strings.
+            bool res = objToTest.AreStringsEqual(str, "String to test");
+           
+            Assert.That(res, Is.True);
+        }
+        [Test]
+        public void StringsMustBeNotEqual()
+        {
+            // Testing the value inequality of the two strings.
+        // This test will fail since the values are equal.
+ bool res = objToTest.AreStringsEqual(str, "String to test");
+ Assert.That(res, Is.False);
+        }
+    }
+}
