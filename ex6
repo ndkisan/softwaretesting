@@ -1,0 +1,76 @@
+using System;
+using System.Collections;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ConsoleApplication1
+{
+    public class calculation
+    {
+        private int result;
+        public void add(int x, int y)
+        {
+            result = x + y;
+        }
+        public int qry
+        {
+            get { return result; }
+        }
+        class Programz
+        {
+            static void main(String[] args)
+            {
+                int num1, num2;
+                Console.Write("Enter 1st number\t");
+                num1 = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter 2nd number\t");
+                num2 = Convert.ToInt32(Console.ReadLine());
+                calculation cal = new calculation();
+                cal.add(num1, num2);
+                Console.Write("\nAdd={0}", cal.qry);
+                Console.ReadLine();
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+TESTING MEHTODS
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+namespace ConsoleApplication1
+{
+    [TestFixture]
+    public class NunitAdd
+    {
+        [Test]
+        public void test1()
+        {
+            calculation cal = new calculation();
+            cal.add(20, 20);
+            Assert.AreEqual(40, cal.qry);
+        }
+        [Test]
+        public void test2()
+        {
+        calculation cal = new calculation();
+            cal.add(10, 20);
+            Assert.AreEqual(40, cal.qry);
+        }
+    }
+}
